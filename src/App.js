@@ -15,15 +15,16 @@ export function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
         <Route path="phonebook" element={<AppPhoneBook />} />
-        <Route path="movies" element={<Movies />}/>
+         <Route path="movies" element={<Movies />}/>
         <Route path="movies/:moviesId" element={<MovieDetail />}>
           <Route path="cast" element={<Cast />} />
           <Route path="revievs" element={<Revievs />}/>
         </Route>
-        {/* <Route path="*" element={<NotFound/>}/> */}
+         {/* <Route path="*" element={<NotFound/>}/>  */}
       </Route>
       </Routes>
       </Suspense>
+
     </>
   );
 }

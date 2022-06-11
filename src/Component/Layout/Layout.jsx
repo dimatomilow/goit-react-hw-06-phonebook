@@ -5,7 +5,7 @@ export const Layout = () => {
     return (
         <Container>
           <AppBar/>
-          <Outlet/>
+           <Outlet/>
         </Container>
     );
 }
