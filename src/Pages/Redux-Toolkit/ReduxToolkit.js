@@ -16,7 +16,7 @@ function ReduxToolkit() {
                     <div >
                         <h1 >Redux Toolkit Todo App</h1>
                 <Form />
-                {todos?.map(todo => ( <TodoItem key={todo.id} text={todo.text} />)
+                {todos?.map(todo => ( <TodoItem key={todo.id} todo={todo} />)
 
                 )}
 

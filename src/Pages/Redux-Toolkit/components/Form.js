@@ -9,6 +9,7 @@ const Form = () => {
         const todo = {
             id: shortid.generate(),
             text: todoValue,
+            completed:true,
         };
         dispatch(addTodo(todo))
         setTodoValue('')
