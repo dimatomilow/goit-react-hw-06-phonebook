@@ -1,12 +1,13 @@
 import {Suspense} from 'react'
 import { Layout } from './Component/Layout/Layout'
 import { Route, Routes } from "react-router-dom";
-import {AppPhoneBook} from './Pages/Phomebook/AppPhoneBook'
-import { HomePage } from './Pages/HomePage/HomePage'
-import  Movies  from './Pages/Movie/vievs/Movies'
-import MovieDetail  from './Pages/Movie/vievs/MovieDetail'
-import  Cast  from './Pages/Movie/vievs/Cast'
-import Revievs from './Pages/Movie/vievs/Revievs'
+// import {AppPhoneBook} from './Pages/Phomebook/AppPhoneBook'
+// import { HomePage } from './Pages/HomePage/HomePage'
+import { NotFound,Revievs,Cast,MovieDetail,Movies,HomePage,AppPhoneBook,Images,ReduxToolkit } from './Component/Lazy/Lazy';
+// import  Movies  from './Pages/Movie/vievs/Movies'
+// import MovieDetail  from './Pages/Movie/vievs/MovieDetail'
+// import  Cast  from './Pages/Movie/vievs/Cast'
+// import Revievs from './Pages/Movie/vievs/Revievs'
 export function App() {
   return (
     <>
@@ -19,8 +20,10 @@ export function App() {
         <Route path="movies/:moviesId" element={<MovieDetail />}>
           <Route path="cast" element={<Cast />} />
           <Route path="revievs" element={<Revievs />}/>
-        </Route>
-         {/* <Route path="*" element={<NotFound/>}/>  */}
+            </Route>
+            <Route path="images" element={<Images />} />
+            <Route path="redux" element={<ReduxToolkit></ReduxToolkit>}></Route>
+         <Route path="*" element={<NotFound/>}/>
       </Route>
       </Routes>
       </Suspense>

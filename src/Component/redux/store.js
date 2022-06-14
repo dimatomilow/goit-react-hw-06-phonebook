@@ -1,5 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import contactsReduser from './contactsSlice '
+import userSlice from '../../Pages/Redux-Toolkit/Features/User/UserSlice';
+import todoSlice from '../../Pages/Redux-Toolkit/Features/Todo/TodoSlice';
 import {
   persistStore,
   persistReducer,
@@ -12,15 +14,17 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage';
 
-const contactsPersistConfig = {
+const persistConfig = {
   key: 'contacts',
   storage,
-  blacklist: ['filter'],
+
 };
 
  const store = configureStore({
   reducer: {
-    contacts: persistReducer(contactsPersistConfig, contactsReduser),
+     contacts: persistReducer(persistConfig, contactsReduser),
+     user: persistReducer(persistConfig,userSlice) ,
+     todo: persistReducer(persistConfig,todoSlice) ,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

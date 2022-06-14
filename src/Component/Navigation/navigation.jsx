@@ -1,11 +1,13 @@
 import {Link,Nav} from './navigation.styled'
-
-export  const Navigation = () => {
+import {useLocation} from 'react-router-dom'
+export const Navigation = () => {
+    const location =useLocation()
     return (<Nav>
-        <Link to="/">Home</Link>
-        <Link to="/phonebook">Phonebook</Link>
-        <Link to="/movies">Movie</Link>
-        <Link to="/images">Images</Link>
+        <Link to="/"state={{from:location}}>Home</Link>
+        <Link to="/phonebook"state={{from:location}}>Phonebook</Link>
+        <Link to="/movies"state={{from:location}}>Movie</Link>
+        <Link to="/images" state={{ from: location }}>Images</Link>
+        <Link to="/redux" state={{ from: location }}>Redux</Link>
         </Nav>
     );
 }

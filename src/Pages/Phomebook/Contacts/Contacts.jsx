@@ -1,6 +1,7 @@
 import { useSelector,useDispatch } from 'react-redux'
 import { deleteContact } from '../../../Component/redux/contactsSlice '
 import PropTypes from 'prop-types';
+
 export const Contacts = () => {
     const dispatch = useDispatch()
      const items = useSelector(state => state.contacts.items);
@@ -10,6 +11,7 @@ export const Contacts = () => {
   );
     return (
 
+
     <ul>
         {filteredContacts.map(({ id, name, number }) =>
         (<li key={id}>
@@ -17,15 +19,13 @@ export const Contacts = () => {
             <button onClick={() => dispatch(deleteContact(id))}>Delete</button>
         </li>
         ))}
-            </ul>
+        </ul>
+
         );}
 
 
 
 
 Contacts.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
   deleteContact: PropTypes.func,
 }

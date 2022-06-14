@@ -1,5 +1,5 @@
 
-import {MovieLink} from '../component/Styles/filmList.styles'
+import {MovieLink} from '../Movie/component/Styles/filmList.styles'
 const Error = () => {
      return (
 

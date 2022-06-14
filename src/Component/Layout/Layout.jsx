@@ -2,11 +2,13 @@ import {Outlet } from "react-router-dom";
 import {Container} from "../Container/Container";
 import { AppBar} from '../AppBar/AppBar'
 export const Layout = () => {
-    return (
+    return (<>
+        <AppBar/>
         <Container>
-          <AppBar/>
+
            <Outlet/>
         </Container>
+        </>
     );
 }
 

@@ -8,7 +8,7 @@ export const useFetchMovies = (form) => {
             if (form===null) { return };
        fetchSearchMoive(form).then(setFilms)
         } catch (error) {
-            setError(error)
+            setError(error.message)
         }
 
     }, [form])

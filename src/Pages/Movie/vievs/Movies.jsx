@@ -8,7 +8,7 @@ import BackLink from '../component/BackLink/BackLink'
 
 
 const Movies = () => {
-    const [form, setForm] = useState('iron man ');
+    const [form, setForm] = useState('iron man');
 
     const [searchParams, setSearchParams] = useSearchParams();
     const location = useLocation();
@@ -29,7 +29,7 @@ const Movies = () => {
                 <BtnSubmit type="submit" value="Search" />
             </Form>
               {!error && <Ul>
-                {films && films.map(({ title, poster_path, id, backdrop_path }) => <Li key={id}><MovieLink to={`/movies/${id}`} state={{from:location}}>{poster_path ? (<Img src={`https://image.tmdb.org/t/p/w500/${poster_path} `} alt={title} />) : (<Img src={`https://image.tmdb.org/t/p/w500/${backdrop_path} `} alt={title} />)}<Title>{title}</Title></MovieLink></Li>)}
+                {films && films.map(({ title, poster_path, id, backdrop_path }) => <Li key={id}><MovieLink to={`/movies/${id}`} state={{from:location}}>{poster_path ? (<Img src={`https://image.tmdb.org/t/p/w500/${poster_path} `} alt={title}  />) : (<Img src={`https://image.tmdb.org/t/p/w500/${backdrop_path} `} alt={title} />)}<Title>{title}</Title></MovieLink></Li>)}
             </Ul>}
 
         </>
