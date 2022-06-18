@@ -1,10 +1,12 @@
 import React from 'react'
 
-const PostItem = () => {
+const PostItem = ({title}) => {
     return (
-        <div >
-            Post title
+        <><div >
+        {title}
         </div>
+        <hr/></>
+
     )
 }
 

@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import contactsReduser from './contactsSlice '
 import userSlice from '../../Pages/Redux-Toolkit/Features/User/UserSlice';
 import todoSlice from '../../Pages/Redux-Toolkit/Features/Todo/TodoSlice';
+import postSlice from '../../Pages/Redux-Toolkit/Features/Post/Posts';
 import {
   persistStore,
   persistReducer,
@@ -24,7 +25,8 @@ const persistConfig = {
   reducer: {
      contacts: persistReducer(persistConfig, contactsReduser),
      user: persistReducer(persistConfig,userSlice) ,
-     todo: persistReducer(persistConfig,todoSlice) ,
+     todo: persistReducer(persistConfig, todoSlice),
+     posts:persistReducer(persistConfig, postSlice),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
